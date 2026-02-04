@@ -1,0 +1,249 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\GRIET> wsl --install
+A distribution with the supplied name already exists. Use --name to chose a different name.
+Error code: Wsl/InstallDistro/ERROR_ALREADY_EXISTS
+PS C:\Users\GRIET> docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+17eec7bbc9d7: Pull complete
+ea52d2000f90: Download complete
+Digest: sha256:05813aedc15fb7b4d732e1be879d3252c1c9c25d885824f6295cab4538cb85cd
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+PS C:\Users\GRIET> docker run -d -p 80:80 docker/getting-started
+Unable to find image 'docker/getting-started:latest' locally
+latest: Pulling from docker/getting-started
+4f7e34c2de10: Pull complete
+f1d1c9928c82: Pull complete
+1e35f6679fab: Pull complete
+b6334b6ace34: Pull complete
+33e0cbbb4673: Pull complete
+ee68d3549ec8: Pull complete
+c158987b0551: Pull complete
+cb9626c74200: Pull complete
+9b6f639ec6ea: Pull complete
+Digest: sha256:d79336f4812b6547a53e735480dde67f8f8f7071b414fbd9297609ffb989abc1
+Status: Downloaded newer image for docker/getting-started:latest
+aa43a89db11e36c55c7065638fd10c5e5b35edf579b9aaa6af7052745335ec09
+PS C:\Users\GRIET> docker run -d -p 80:80 docker/getting-started
+b2f09620259b2bd5efe87bb8f1a161dfb6529413f1c1efa2f57318f5cf50fb70
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint blissful_raman (d0e22dd94a9e690166f8b8c9d62a74b0b8ba35cb888fac2a8e03a2b828ccdd5a): Bind for 0.0.0.0:80 failed: port is already allocated
+
+Run 'docker run --help' for more information
+PS C:\Users\GRIET> docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                     PORTS                                 NAMES
+b2f09620259b   docker/getting-started   "/docker-entrypoint.…"   2 minutes ago   Created                                                          blissful_raman
+aa43a89db11e   docker/getting-started   "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes               0.0.0.0:80->80/tcp, [::]:80->80/tcp   wonderful_taussig
+446422b284b7   hello-world              "/hello"                 4 minutes ago   Exited (0) 4 minutes ago                                         vibrant_hamilton
+PS C:\Users\GRIET> docker start git.server
+Error response from daemon: No such container: git.server
+failed to start containers: git.server
+PS C:\Users\GRIET> apt.git update
+apt.git : The term 'apt.git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ apt.git update
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (apt.git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\GRIET> git --version
+git version 2.43.0.windows.1
+PS C:\Users\GRIET> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\GRIET> git add .
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\GRIET> git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+PS C:\Users\GRIET> git --version
+git version 2.43.0.windows.1
+PS C:\Users\GRIET> git clone https://github.com/cmmh79611094/devopsworkshop.git
+Cloning into 'devopsworkshop'...
+warning: You appear to have cloned an empty repository.
+PS C:\Users\GRIET> mkdir chandu
+
+
+    Directory: C:\Users\GRIET
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        04-02-2026     12:07                chandu
+
+
+PS C:\Users\GRIET> cd chandu
+PS C:\Users\GRIET\chandu> git clone https://github.com/cmmh79611094/devopsworkshop.git
+Cloning into 'devopsworkshop'...
+warning: You appear to have cloned an empty repository.
+PS C:\Users\GRIET\chandu> cd
+PS C:\Users\GRIET\chandu> cd ..
+PS C:\Users\GRIET> ls
+
+
+    Directory: C:\Users\GRIET
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        03-12-2024     10:55                .anaconda
+d-----        04-02-2026     11:25                .cagent
+d-----        03-12-2024     10:56                .conda
+d-----        04-02-2026     11:25                .config
+d-----        03-12-2024     10:55                .continuum
+d-----        04-02-2026     11:41                .docker
+d-----        03-12-2024     10:56                .ipython
+d-----        23-04-2025     09:57                .jupyter
+d-----        03-12-2024     13:34                .matplotlib
+d-----        04-02-2026     10:51                .VirtualBox
+d-----        23-04-2025     12:19                .virtualenvs
+d-----        06-12-2023     09:37                .vscode
+d-----        03-12-2024     10:55                anaconda3
+d-----        04-02-2026     12:07                chandu
+d-r---        03-03-2025     13:47                Contacts
+d-r---        04-02-2026     11:38                Desktop
+d-----        04-02-2026     12:02                devopsworkshop
+d-r---        03-11-2025     09:51                Documents
+d-r---        04-02-2026     11:34                Downloads
+d-r---        03-03-2025     13:47                Favorites
+d-r---        03-03-2025     13:47                Links
+d-r---        03-03-2025     13:47                Music
+d-----        26-04-2024     10:24                myreactapp
+d-r---        14-06-2023     23:39                OneDrive
+d-r---        02-05-2025     14:46                Pictures
+d-----        23-04-2025     14:36                PyCharmMiscProject
+d-r---        03-03-2025     13:47                Saved Games
+d-r---        03-03-2025     13:47                Searches
+d-r---        03-02-2026     14:33                Videos
+d-----        03-02-2026     10:28                VirtualBox VMs
+-a----        03-12-2024     10:55            146 .condarc
+-a----        06-12-2023     09:44             14 .node_repl_history
+-a----        23-04-2025     13:41              0 jcef_15316.log
+
+
+PS C:\Users\GRIET> cd chandu
+PS C:\Users\GRIET\chandu> git init
+Initialized empty Git repository in C:/Users/GRIET/chandu/.git/
+PS C:\Users\GRIET\chandu> git add README.md
+fatal: pathspec 'README.md' did not match any files
+PS C:\Users\GRIET\chandu> echo "# devopsworkshop" >> README.md
+PS C:\Users\GRIET\chandu> git init
+Reinitialized existing Git repository in C:/Users/GRIET/chandu/.git/
+PS C:\Users\GRIET\chandu> git add README.md
+PS C:\Users\GRIET\chandu> git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'GRIET@DESKTOP-4G6KIL1.(none)')
+PS C:\Users\GRIET\chandu> git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'GRIET@DESKTOP-4G6KIL1.(none)')
+PS C:\Users\GRIET\chandu> git config --global user.email "kcm7961.1852@gmail.com"
+PS C:\Users\GRIET\chandu> git config --global user.name "cmmh79611094"
+PS C:\Users\GRIET\chandu> git commit -m "first commit"
+[master (root-commit) 4a865ee] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+PS C:\Users\GRIET\chandu> git branch -M main^C
+PS C:\Users\GRIET\chandu> git branch -M main
+PS C:\Users\GRIET\chandu> git remote add origin https://github.com/cmmh79611094/devopsworkshop.git
+PS C:\Users\GRIET\chandu> git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 246 bytes | 246.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cmmh79611094/devopsworkshop.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\GRIET\chandu> git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\GRIET\chandu>
